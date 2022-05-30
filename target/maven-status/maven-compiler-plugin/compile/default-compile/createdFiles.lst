@@ -1,0 +1,7 @@
+astermanager/AsterManager.class
+astermanager/Llamada.class
+asteradapter/Main.class
+rtdb/JedisComandos.class
+rabbitmq/RabbitManager.class
+astermanager/Funciones.class
+rtdb/LibJedis.class

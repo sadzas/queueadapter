@@ -1,0 +1,13 @@
+Diccionario para la conexion de WebSocket con FrontEnd:
+
+<<<< ENTRANTE >>>>
+
+GW1000: Se registra un nuevo GW.
+GW1001: Se parkeo una nueva llamada. (ParkedCallEvent)
+GW1002: El llamante corto la llamada. (ParkedCallGiveUpEvent)
+GW1003: Finalizo el tiempo de espera de la llamada. (ParkedCallTimeOutEvent)
+
+
+<<<< SALIENTE >>>>
+
+QU1000: Actualiza datos de las Queues.

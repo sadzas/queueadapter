@@ -1,0 +1,17 @@
+# Variables Manager
+mngServidor=192.168.0.19
+mngUsuario=asteradapter
+mngPassword=asteradapter
+mngPuerto=5038
+
+# Variables RabbitMQ
+rbNumAdapter=101
+rbQueueBind=101
+rbServidor=192.168.0.19
+rbUsuario=test
+rbPassword=test
+rbPuerto=5672
+
+# Variables Redis
+rdServidor=192.168.0.19
+rdPuerto=6379

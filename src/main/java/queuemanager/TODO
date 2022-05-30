@@ -1,0 +1,24 @@
+En la DB tengo que agregar en la tabla colas un numero de referencia.
+El numero de referencia es el numero que debe "matchear" el evento newchannel.
+Estos numeros de referencia deben llegar al adaptador en el evento de registro de adaptador.
+Entonces se vuelve dinamico el matcheo, algo como lo siguiente:
+
+if (evento.getExten().equals("501")) { ==>> Debe matchear con algun numero de referencia
+    try {
+        Logger.getLogger(AsterManager.class.getName()).log(Level.DEBUG, "NewChannelEvent | Nueva llamada | LinkedId: " + evento.getLinkedid() + " | Cola: 501");
+        RabbitMensaje llamada = new RabbitMensaje();
+        llamada.setId_adapter(IDADAPTER);
+        llamada.setIdevento(Funciones.obtengoIDEvento(evento.getClass().getSimpleName()));
+        llamada.setFecha(evento.getDateReceived());
+        llamada.setLinkedid(evento.getLinkedid());
+        llamada.setChannel(evento.getChannel());
+        llamada.setCola("501");
+
+        JedisFunciones.almacenoLlamada(evento.getLinkedid(), llamada);
+        parkeoLlamada(evento.getChannel(), evento.getLinkedid(), "501");
+        } catch (org.asteriskjava.manager.TimeoutException ex) {
+            Logger.getLogger(AsterManager.class.getName()).log(Level.FATAL, "Parkeo de Llamada", ex);
+    }
+}
+
+
